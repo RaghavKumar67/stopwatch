@@ -79,6 +79,7 @@ body{
     background-color: var(--clr);
     padding: 12px 24px;
     margin-inline: 12px;
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     cursor: pointer;
 }
