@@ -15,6 +15,9 @@ body{
     flex-direction: column;
 }
 
+.text-black{
+    color:#000 !important;
+}
 .stopwatch{
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 20px;
