@@ -9,17 +9,46 @@ let mins = 0;
 
 let timerId = null;
 
-startBtn.addEventListener('click', function(){
+let isRunning = false;
+
+const button = document.getElementById('startStopButton');
+
+button.addEventListener('click', function() {
+    if (isRunning) {
+        
+        stopProcess();
+        button.textContent = 'Start';
+       
+    } else {
+        
+        startProcess();
+        button.textContent = 'Pause';
+        
+    }
+    isRunning = !isRunning;
+});
+
+function startProcess() {
     console.log("Start button clicked");
     if(timerId !== null){
         clearInterval(timerId);
     }
     timerId = setInterval(startTimer, 10);
-});
+    
+}
 
-stopBtn.addEventListener('click', function(){
+function stopProcess() {
     console.log("Stop button clicked");
     clearInterval(timerId);
+    
+}
+
+stopBtn.addEventListener('click', function(){
+    alert(`Final elapsed time is ${timerDisplay.innerHTML}`);
+    console.log("Stop button clicked");
+    clearInterval(timerId);
+    timerDisplay.innerHTML = `00 : 00 : 00`;
+    msec = secs = mins = 0;
 });
 
 resetBtn.addEventListener('click', function(){
